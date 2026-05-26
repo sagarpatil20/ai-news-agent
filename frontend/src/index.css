@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Common Fonts */
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Theme: Dark (Default) */
+  --bg: #09090b;
+  --bg-offset: #121214;
+  --bg-card: #18181b;
+  --bg-card-hover: #202024;
+  --border: #27272a;
+  --border-strong: #3f3f46;
+  --text: #a1a1aa;
+  --text-bold: #f4f4f5;
+  --text-muted: #71717a;
+  --accent: #ffffff;
+  --accent-inverse: #000000;
+  --accent-glow: rgba(255, 255, 255, 0.08);
+  --error: #ef4444;
+  --error-bg: rgba(239, 68, 68, 0.1);
+  --success: #22c55e;
+  --skeleton-bg: #27272a;
+  --shadow: rgba(0, 0, 0, 0.5) 0px 8px 30px;
+  --selection-bg: #f4f4f5;
+  --selection-text: #000000;
+}
+
+/* Light Theme Variables */
+:root.light {
+  --bg: #fafafa;
+  --bg-offset: #f4f4f5;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f4f4f5;
+  --border: #e4e4e7;
+  --border-strong: #a1a1aa;
+  --text: #52525b;
+  --text-bold: #09090b;
+  --text-muted: #71717a;
+  --accent: #000000;
+  --accent-inverse: #ffffff;
+  --accent-glow: rgba(0, 0, 0, 0.05);
+  --error: #dc2626;
+  --error-bg: rgba(220, 38, 38, 0.08);
+  --success: #16a34a;
+  --skeleton-bg: #e4e4e7;
+  --shadow: rgba(0, 0, 0, 0.05) 0px 8px 30px;
+  --selection-bg: #09090b;
+  --selection-text: #ffffff;
+}
+
+/* Selection highlight */
+::selection {
+  background-color: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+/* HTML scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text);
+}
+
+/* Common animations */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.spin-anim {
+  animation: spin 1.5s linear infinite;
+}
+
+.pulse-anim {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
