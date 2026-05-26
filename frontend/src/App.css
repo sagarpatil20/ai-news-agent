@@ -811,15 +811,17 @@
 .input-footer {
   position: fixed;
   bottom: 0;
-  right: 0;
-  left: 240px; /* Offset by desktop sidebar width to center exactly in the chat area */
+  left: 50%;
+  transform: translateX(calc(-50% + 120px)); /* Shift 120px right on desktop to align with the center of the right pane */
+  width: 100%;
+  max-width: 680px;
   z-index: 80;
   background: linear-gradient(to top, var(--bg) 75%, rgba(9, 9, 11, 0) 100%);
   padding: 1.5rem 0 2rem 0;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-  transition: left 0.3s ease, background-color 0.3s;
+  transition: transform 0.3s ease, background-color 0.3s;
 }
 
 :root.light .input-footer {
@@ -1105,7 +1107,8 @@
     display: none; /* Hide history timeline sidebar on tablets & mobiles */
   }
   .input-footer {
-    left: 0; /* Align full-screen width on tablet & mobile */
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
