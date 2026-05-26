@@ -92,9 +92,7 @@
 
 /* Layout Body containing Sidebar + Main chat */
 .layout-body {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
+  display: block;
   width: 100%;
   position: relative;
 }
@@ -109,9 +107,11 @@
   flex-direction: column;
   gap: 1.25rem;
   height: calc(100vh - 64px);
-  position: sticky;
+  position: fixed;
+  left: 0;
   top: 64px;
   overflow-y: auto;
+  z-index: 10;
 }
 
 .sidebar-title {
@@ -812,7 +812,7 @@
   position: fixed;
   bottom: 0;
   left: 50%;
-  transform: translateX(calc(-50% + 120px)); /* Shift 120px right on desktop to align with the center of the right pane */
+  transform: translateX(-50%); /* Center perfectly on the viewport on all screen sizes */
   width: 100%;
   max-width: 680px;
   z-index: 80;
